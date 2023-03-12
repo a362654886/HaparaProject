@@ -59,10 +59,13 @@ const HomePage = (): JSX.Element => {
     <>
       <div>
         <h1>LRU Values</h1>
-        <p>category: {state.lruCache ? state.lruCache.category : ""}</p>
+        <p data-testid="category">
+          category: {state.lruCache ? state.lruCache.category : ""}
+        </p>
         <div>
           <>new category :</>
           <InputNumber
+            placeholder="new category"
             value={newCategory}
             onChange={(v) => setNewCategory(v ? v : 0)}
           />
@@ -73,14 +76,21 @@ const HomePage = (): JSX.Element => {
           columns={columns}
         />
         <div>
-          <p>result: {state.lruCache ? state.lruCache.result : ""}</p>
+          <p data-testid="result">
+            result: {state.lruCache ? state.lruCache.result : ""}
+          </p>
         </div>
         <div>
           <p>LRU put</p>
           <>key: </>
-          <InputNumber value={newKey} onChange={(v) => setNewKey(v ? v : 0)} />
+          <InputNumber
+            placeholder="put key"
+            value={newKey}
+            onChange={(v) => setNewKey(v ? v : 0)}
+          />
           <>value: </>
           <InputNumber
+            placeholder="put value"
             value={newValue}
             onChange={(v) => setNewValue(v ? v : 0)}
           />

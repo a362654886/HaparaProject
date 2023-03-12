@@ -22,13 +22,15 @@
     "redux-injectors": "^2.0.0",
     "redux-saga": "^1.2.2",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@playwright/test": "^1.27.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "npx playwright test",
+    "eject": "react-scripts eject",
+    "test:debug": "npx playwright test --project=chromium --debug"
   },
   "eslintConfig": {
     "extends": [
