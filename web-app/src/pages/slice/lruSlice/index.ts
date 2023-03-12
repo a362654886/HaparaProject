@@ -19,9 +19,13 @@ const slice = createSlice({
     */
     updateCategory(state, action: PayloadAction<number>) {
       const newState: RootState = cloneDeep(state);
-      newState.category = action.payload;
-      newState.LRUCache = [];
-      newState.result = "";
+      if (action.payload < -1 || action.payload > 1000) {
+        newState.result = "the category should between 1 and 1000";
+      } else {
+        newState.category = action.payload;
+        newState.LRUCache = [];
+        newState.result = "";
+      }
       return newState;
     },
     putCache(state, action: PayloadAction<LRUValue>) {
