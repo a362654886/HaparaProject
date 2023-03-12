@@ -58,7 +58,7 @@ const slice = createSlice({
       } else {
         //move the element to the first position in the array
         newState.LRUCache.splice(index, 1);
-        newState.LRUCache.push({
+        newState.LRUCache.unshift({
           key: state.LRUCache[index].key,
           value: state.LRUCache[index].value,
         });
