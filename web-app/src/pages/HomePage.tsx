@@ -39,7 +39,7 @@ const HomePage = (): JSX.Element => {
   };
 
   React.useEffect(() => {
-    console.log(state.lruCache);
+    console.log("test");
   }, [state]);
 
   const columns = [
